@@ -1,0 +1,38 @@
+<div class="container">
+  <%= link_to  'Back to list', root_path, class: 'btn btn-primary' %>
+  
+
+  <div class="container">
+    <p>
+      <strong>Name:</strong>
+      <%= @ad.name %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @ad.description %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= @ad.price %>
+    </p>
+
+    <p>
+      <strong>User:</strong>
+      <%= @ad.user_id %>
+    </p>
+    <% if policy(@ad).edit? %>
+      <%= link_to 'Edit', edit_ad_path(@ad), class: 'btn btn-success' %>
+    <% end %>
+
+    <% if policy(@ad).destroy? %>
+      <%= link_to 'Delete',
+                  ad_path(@ad),
+                  class: "btn btn-danger",
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </div>
+
+</div>

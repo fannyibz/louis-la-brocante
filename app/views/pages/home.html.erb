@@ -1,2 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1 id="hero-title">Annonces</h1>
+
+  <div class="row card-container">
+    <div class="col-8" id="mt-3">
+   
+        <div class="row justify-content-center">
+          <% @ads.each do |ad| %>
+            <div class="col-md-12 col-lg-4">
+              <%= link_to ad_path(ad) do %>
+                <div class="card-power">
+                  <div class="card-power-infos">
+                    <div>
+                      <h3><%= ad.name %></h3>
+                      <h4><%= ad.type %></h4>
+                    </div>
+
+                    <p><%= ad.price %>€</p>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <%= link_to "Back to top", root_path(anchor: 'hero-title'), class: "btn btn-outline-primary mt-5 ml-3"%>
+</div>

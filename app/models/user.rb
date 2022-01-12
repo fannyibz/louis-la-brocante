@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :ads, dependent: :destroy
+  
+  validates :email, format: { with: /\A(.+)@(.+)\z/, message: "Email invalid"  },
+                    uniqueness: { case_sensitive: false },
+                    length: { minimum: 4, maximum: 254 }
 end

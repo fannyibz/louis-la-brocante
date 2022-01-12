@@ -282,7 +282,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_bot_rails
-  faker (~> 2.10, >= 2.10.2)
+  faker
   font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.3)
