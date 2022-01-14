@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 id="hero-title">Dashboard</h1>
+  <div class="is-flex">
+    <div class="container">
+      <h2>Mes annonces</h2>
+      <% @user_ads.each %>
+      <% @user_ads.each do |ad| %>
+        <%= link_to ad_path(ad) do %>
+          <div class="card-power">
+            <div class="card-power-infos">
+              <div>
+                <h3><%= ad.name %></h3>
+                <h4><%= ad.department %></h4>
+              </div>
+
+              <p><%= ad.price %>€</p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="container">
+      <h2>Profil</h2>
+      <h3><%= current_user.email %></h3>
+    </div>
+  </div>
+</div>

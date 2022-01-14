@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @ads = Ad.all
   end
+
+  def dashboard
+    @user_ads = Ad.all.where(user: current_user)
+  end
+
 end

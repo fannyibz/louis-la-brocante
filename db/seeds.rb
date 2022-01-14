@@ -9,12 +9,12 @@ puts "#{User.count} user(s) created"
 
 puts ">>>> Starting creating ads for Ringo..."
 5.times do 
-  Ad.create(user: User.find_by(email: 'ringo@mail.com'), name: Faker::Commerce.product_name, type: Faker::Commerce.department, description: Faker::TvShows::SiliconValley.motto , price: Faker::Commerce.price)
+  Ad.create(user: User.find_by(email: 'ringo@mail.com'), name: Faker::Commerce.product_name, department: Faker::Commerce.department(max: 1, fixed_amount: true), description: Faker::TvShows::SiliconValley.motto , price: Faker::Commerce.price)
 end
 puts "#{Ad.count} ad(s) created"
 
 puts ">>>> Starting creating ads for John..."
 5.times do 
-  Ad.create(user: User.find_by(email: 'john@mail.com'), name: Faker::Commerce.product_name, type: Faker::Commerce.department, description: Faker::TvShows::SiliconValley.motto , price: Faker::Commerce.price)
+  Ad.create(user: User.find_by(email: 'john@mail.com'), name: Faker::Commerce.product_name, department: Faker::Commerce.department(max: 1, fixed_amount: true), description: Faker::TvShows::SiliconValley.motto , price: Faker::Commerce.price)
 end
 puts "#{Ad.count} ad(s) created"

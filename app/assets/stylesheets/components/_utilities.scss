@@ -1,0 +1,28 @@
+h1 {
+  color: $ocher;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  color: $orange;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+h4 {
+  color: $ocher;
+  font-size: 15px;
+}
+
+h5 {
+  color: #873131;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}

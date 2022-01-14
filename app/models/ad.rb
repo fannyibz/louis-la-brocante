@@ -3,5 +3,5 @@ class Ad < ApplicationRecord
 
   validates :name, presence: true
   validates :price, presence: true
-  validates :type, presence: true
+  validates :department, presence: true
 end
