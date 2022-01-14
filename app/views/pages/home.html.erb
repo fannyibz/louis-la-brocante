@@ -9,6 +9,7 @@
             <div class="col-md-12 col-lg-4">
               <%= link_to ad_path(ad) do %>
                 <div class="card-power">
+                   <%= cl_image_tag ad.photo.key %>
                   <div class="card-power-infos">
                     <div>
                       <h3><%= ad.name %></h3>
