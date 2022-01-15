@@ -12,6 +12,7 @@ class AdsController < ApplicationController
 
   def new
     @ad = Ad.new
+    authorize @ad
   end
 
   def edit
@@ -19,9 +20,9 @@ class AdsController < ApplicationController
   end
 
   def create
-    authorize @service
     @ad = Ad.new(ad_params)
     @ad.user = current_user
+    authorize @ad
     if @ad.save
       redirect_to ad_path(@ad)
     else
@@ -49,6 +50,6 @@ class AdsController < ApplicationController
 
 
   def ad_params
-    params.require(:ad).permit(:name, :type,:description, :price, :user_id, :photo)
+    params.require(:ad).permit(:name, :department, :description, :price, :user_id, :photo)
   end
 end

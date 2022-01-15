@@ -1,8 +1,9 @@
 <div class="container">
   <h1 id="hero-title">Dashboard</h1>
 
-  <div class="is-flex">
+  <%= link_to "Créer une annonce", new_ad_path, class:"btn btn-success"  %>
 
+  <div class="is-flex">
     <div class="container">
       <h2>Mes annonces</h2>
       <% @user_ads.each %>
@@ -24,7 +25,6 @@
         <% end %>
       <% end %>
     </div>
-
     <div class="container">
       <h2>Profil</h2>
       <h3><%= current_user.email %></h3>

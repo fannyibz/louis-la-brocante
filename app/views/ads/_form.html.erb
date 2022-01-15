@@ -4,14 +4,15 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :price %>
-      <%= f.association :user %>
+      <%= f.input :name, label: "Nom" %>
+      <%= f.input :department, label: "Catégorie" %>
+      <%= f.text_area :description, label: "Quelques précisions..." %>
+      <%= f.input :price, label: "Prix" %>
+      <%= f.input :photo, label: "Ajouter des photos", as: :file, required: true, input_html: {} %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit %>
+      <%= f.button :submit, class:"btn btn-success" %>
     </div>
   <% end %>
 </div>
