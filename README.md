@@ -24,9 +24,9 @@ Now run the seeds
 ```
 rails db:seed
 ```
-# Login
-email: ringo@mail.com
-password: 123456
+#### Login
+* email: ringo@mail.com
+* password: 123456
 
 ## Researches
 
