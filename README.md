@@ -28,7 +28,26 @@ rails db:seed
 * email: ringo@mail.com
 * password: 123456
 
-## Researches
+
+##Feature implemented:
+* A user(seller) can create, edit, delete an ad, so he can sell a product.
+* A user(buyer) can see a list of all ads, so he can choose a product to buy.
+* A user(buyer) can chat with the seller so he can ask for more informations and arrange a transaction.
+* A user(seller) can check on one page, all his ads and conversations.
+
+##Features to implement:
+* User profil
+* Sell and buy online with stripe
+* Search bar with elasticsearch
+* Map
+
+##With more time, i would:
+* implement all the tests with rspec.
+* create a state machine, for the publication of an ad.
+
+
+
+
 
 I defined the project and created a roadmap that I put on [Github project](https://github.com/junkiesan/s-test/projects/1).
 Here you will find every tickets I realized and thought about. They are linked to issues, themselves linked to pull requests. Even though I worked alone, I tried to contribute to this project as if I was in a team.
