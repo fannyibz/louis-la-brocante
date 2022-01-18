@@ -19,11 +19,14 @@ Then run the migrations
 ```
 rails db:migrate
 ```
-Now run the seeds so you can answer quizzes
+Now run the seeds 
 
 ```
 rails db:seed
 ```
+# Login
+email: ringo@mail.com
+password: 123456
 
 ## Researches
 
