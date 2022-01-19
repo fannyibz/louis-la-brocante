@@ -1,3 +1,5 @@
+#Louis la brocante 🕰
+
 ## Setup
 For it's first launch run the following command :
 
@@ -57,4 +59,4 @@ You can log with this profil:
   * Search bar with elasticsearch
   * Map 
 
-Thanks,
+Thanks 🙏,
