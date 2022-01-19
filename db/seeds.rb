@@ -5,8 +5,8 @@ Ad.destroy_all
 User.destroy_all
 
 puts ">>>> Creating users..."
-ringo = User.create(email: "ringo@mail.com", password: '123456')
-john = User.create(email: "john@mail.com", password: '123456')
+ringo = User.create(name: 'Ringo', email: "ringo@mail.com", password: '123456')
+john = User.create(name: 'John', email: "john@mail.com", password: '123456')
 puts "#{User.count} user(s) created"
 
 puts ">>>> Creating ads for Ringo..."
@@ -46,11 +46,14 @@ puts "#{Ad.count} ad(s) created"
 puts ">>>> Creating chatrooms..."
 chat_1 = Chatroom.create(name: "Chat", user_id: john.id , ad_id: bedside_lamp.id)
 chat_2 = Chatroom.create(name: "Chat", user_id: ringo.id, ad_id: sofa.id)
+chat_3 = Chatroom.create(name: "Chat", user_id: john.id, ad_id: toy.id)
 puts "#{Chatroom.count} chatroom(s) created"
 
 puts ">>>> Creating messages..."
 Message.create(chatroom_id: chat_1.id, user_id:john.id, ad_id: bedside_lamp.id, content: 'Bonjour')
 Message.create(chatroom_id: chat_1.id, user_id:ringo.id, ad_id: bedside_lamp.id, content: 'hey')
-Message.create(chatroom_id: chat_2.id, user_id:john.id, ad_id: sofa.id, content: "Bonjour, je suis intéressé par votre canapé. Pourriez-vous m'envoyer d'autres photo, svp?")
-Message.create(chatroom_id: chat_2.id, user_id:ringo.id, ad_id: sofa.id, content: 'Oui avec plaisir.')
+Message.create(chatroom_id: chat_2.id, user_id:john.id, ad_id: sofa.id, content: 'Oui avec plaisir.')
+Message.create(chatroom_id: chat_2.id, user_id:ringo.id, ad_id: sofa.id, content: "Bonjour, je suis intéressé par votre canapé. Pourriez-vous m'envoyer d'autres photo, svp?")
+Message.create(chatroom_id: chat_3.id, user_id:john.id, ad_id: toy.id, content: "Bonjour ce jouets est-il toujours disponible?")
+Message.create(chatroom_id: chat_3.id, user_id:ringo.id, ad_id: toy.id, content: "Oui! Vous souhaitez que je vous l'envoie?")
 puts "#{Message.count} message(s) created"

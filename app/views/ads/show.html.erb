@@ -5,7 +5,7 @@
       <%= cl_image_tag @ad.photo.key, class:"img-ad-show" %>
       <div class="ad-infos">
         <p>
-          <strong>Name:</strong>
+          <strong>Nom:</strong>
           <%= @ad.name %>
         </p>
 
@@ -15,13 +15,13 @@
         </p>
 
         <p>
-          <strong>Price:</strong>
+          <strong>Prix:</strong>
           <%= "#{@ad.price} €" %>
         </p>
 
         <p>
-          <strong>User:</strong>
-          <%= @ad.user.email %>
+          <strong>Vendeur:</strong>
+          <%= @ad.user.name %>
         </p>
 
         
@@ -41,11 +41,12 @@
       </div>
     </div>
       
-    <div class="container chat-container">
+    <div class="chat-container">
       <% if @ad.user == current_user %>
+        <h6>Liste des conversations</h6>
         <% @chatrooms.each do |chatroom| %>
-          <div class="chat-card">
-            <p><%= "Contacte #{chatroom.user&.email}" %></p>
+          <div class="is-flex chat-card">
+            <p><%= "Conversation avec #{chatroom.user.name}" %></p>
             <%= link_to ad_chatroom_path(@ad, chatroom), class:"btn btn-primary btn-personalised" do %>
               <i class="far fa-comment-dots"></i>
             <%end%>

@@ -14,7 +14,13 @@
 
 .nav-link {
   color: white !important;
-  :hover {
-    color: grey !important;
-  }
+}
+
+.nav-link:hover {
+  color: $blue !important;
+}
+
+.nav-profil {
+  color: white !important;
+  margin: 8px 8px 0px 8px;
 }
