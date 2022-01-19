@@ -1,12 +1,20 @@
-.navbar-lewagon {
+.navbar-brocante {
   justify-content: space-between;
-  background: white;
+  background: $ocher;
+  color: #ffedd3;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-brocante .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-brocante .navbar-brand img {
+  width: 60px;
+}
+
+.nav-link {
+  color: white !important;
+  :hover {
+    color: grey !important;
+  }
 }

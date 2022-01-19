@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user_ads = Ad.all.where(user: current_user)
+    @chatrooms = Chatroom.select {|chat| chat.ad_owner  == current_user}
   end
 
 end

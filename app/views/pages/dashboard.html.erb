@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container white-container">
   <h1 id="hero-title">Dashboard</h1>
 
-  <%= link_to "Créer une annonce", new_ad_path, class:"btn btn-success"  %>
+  <%= link_to "Créer une annonce", new_ad_path, class:"btn btn-success", id:"btn-ad"  %>
 
   <div class="is-flex">
     <div class="container">
@@ -12,12 +12,11 @@
           <div class="card-dashboard">
             <div class="is-flex">
               <%= cl_image_tag ad.photo.key, height: 120, width: 115, crop: :fill %>
-              <div class="card-power-infos">
+              <div class="card-infos">
                 <div>
                   <h3><%= ad.name %></h3>
                   <h4><%= ad.department %></h4>
                 </div>
-
                 <p><%= ad.price %>€</p>
               </div>
             </div>
@@ -26,8 +25,18 @@
       <% end %>
     </div>
     <div class="container">
-      <h2>Profil</h2>
-      <h3><%= current_user.email %></h3>
+      <h2>Chat liste</h2>
+      <% @chatrooms.each do |chatroom|%>
+        <div class="chat-card">
+          <div class= "popo">
+            <h3><%= chatroom.ad.name %><h3>
+            <p><%= "Message de: #{chatroom.user&.email}" %></p>
+          </div>
+          <%= link_to ad_chatroom_path(chatroom.ad, chatroom), class:"btn btn-primary btn-personalised" do %>
+            <i class="far fa-comment-dots"></i>
+          <%end%>
+        </div>
+      <% end %>
     </div>
 
   </div>

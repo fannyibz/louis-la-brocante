@@ -1,16 +1,16 @@
-<div class="container">
+<div class="container white-container">
   <h1 id="hero-title">Annonces</h1>
 
-  <div class="row card-container">
-    <div class="col-8" id="mt-3">
+  <div class="row px-5">
+    <div class="col-12" id="mt-3">
    
         <div class="row justify-content-center">
           <% @ads.each do |ad| %>
             <div class="col-md-12 col-lg-4">
               <%= link_to ad_path(ad) do %>
-                <div class="card-power">
+                <div class="card">
                    <%= cl_image_tag ad.photo.key %>
-                  <div class="card-power-infos">
+                  <div class="card-infos">
                     <div>
                       <h3><%= ad.name %></h3>
                       <h4><%= ad.department %></h5>

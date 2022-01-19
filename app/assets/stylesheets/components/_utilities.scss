@@ -5,19 +5,38 @@ h1 {
   margin-bottom: 30px;
 }
 
-h3 {
+h2 {
   color: $orange;
-  margin-bottom: 30px;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: $ocher;
   font-size: 20px;
 }
 
 h4 {
-  color: $ocher;
+  color: #575757;
   font-size: 15px;
 }
 
 h5 {
-  color: #873131;
+  color: $blue;
+}
+
+p {
+  color: #304f54;
+  font-size: 13px;
+}
+
+.white-container {
+  background-color: white;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px #80808057;
+  position: relative;
 }
 
 a:hover,

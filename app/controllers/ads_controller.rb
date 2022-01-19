@@ -8,6 +8,12 @@ class AdsController < ApplicationController
 
   def show
     authorize @ad
+    
+    unless current_user == @ad.user
+      @chatroom = Chatroom.find_or_create_by(user: current_user, ad: @ad)
+    else
+      @chatrooms = @ad.chatrooms
+    end
   end
 
   def new

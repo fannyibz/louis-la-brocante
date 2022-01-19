@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :ads, dependent: :destroy
-  
+  has_many :chatrooms
   validates :email, format: { with: /\A(.+)@(.+)\z/, message: "Email invalid"  },
                     uniqueness: { case_sensitive: false },
                     length: { minimum: 4, maximum: 254 }

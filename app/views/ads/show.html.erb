@@ -1,38 +1,61 @@
-<div class="container">
-  <%= link_to  'Back to list', root_path, class: 'btn btn-primary' %>
-  
+<div class="container white-container">  
+    <%= link_to  'Back to list', root_path, class: 'btn btn-info btn-personalised' %>
+  <div class="is-flex">
+    <div class="container is-flex">
+      <%= cl_image_tag @ad.photo.key, class:"img-ad-show" %>
+      <div class="ad-infos">
+        <p>
+          <strong>Name:</strong>
+          <%= @ad.name %>
+        </p>
 
-  <div class="container">
-    <p>
-      <strong>Name:</strong>
-      <%= @ad.name %>
-    </p>
+        <p>
+          <strong>Description:</strong>
+          <%= @ad.description %>
+        </p>
 
-    <p>
-      <strong>Description:</strong>
-      <%= @ad.description %>
-    </p>
+        <p>
+          <strong>Price:</strong>
+          <%= "#{@ad.price} €" %>
+        </p>
 
-    <p>
-      <strong>Price:</strong>
-      <%= @ad.price %>
-    </p>
+        <p>
+          <strong>User:</strong>
+          <%= @ad.user.email %>
+        </p>
 
-    <p>
-      <strong>User:</strong>
-      <%= @ad.user_id %>
-    </p>
-    <% if policy(@ad).edit? %>
-      <%= link_to 'Edit', edit_ad_path(@ad), class: 'btn btn-success' %>
-    <% end %>
+        
+        <% if @ad.user_id == current_user.id %>
+          <% if policy(@ad).edit? %>
+            <%= link_to 'Edit', edit_ad_path(@ad), class: 'btn btn-success btn-personalised' %>
+          <% end %>
 
-    <% if policy(@ad).destroy? %>
-      <%= link_to 'Delete',
-                  ad_path(@ad),
-                  class: "btn btn-danger",
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-    <% end %>
+          <% if policy(@ad).destroy? %>
+            <%= link_to 'Delete',
+                        ad_path(@ad),
+                        class: "btn btn-danger btn-personalised",
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %>
+          <% end %>
+        <% end %> 
+      </div>
+    </div>
+      
+    <div class="container chat-container">
+      <% if @ad.user == current_user %>
+        <% @chatrooms.each do |chatroom| %>
+          <div class="chat-card">
+            <p><%= "Contacte #{chatroom.user&.email}" %></p>
+            <%= link_to ad_chatroom_path(@ad, chatroom), class:"btn btn-primary btn-personalised" do %>
+              <i class="far fa-comment-dots"></i>
+            <%end%>
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to ad_chatroom_path(@ad, @chatroom), class:"btn btn-primary btn-personalised" do %>
+          <%= "Contacter le vendeur" %>
+        <%end%>
+      <% end %>
+    </div>
   </div>
-
 </div>

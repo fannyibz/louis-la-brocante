@@ -1,53 +1,39 @@
-.card-container {
-  margin: 40px 0px;
-  justify-content: center;
-}
-
 #hero-title {
   margin-bottom: 15px;
   border-radius: 50px;
   text-align: center;
 }
 
-.card-power {
+.card {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin: 10px 0px;
-}
-
-.card-power > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-power {
   font-size: 16px;
   font-weight: bold;
   padding-bottom: 5px;
 }
 
-.card-power p {
+.card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card p {
   font-size: 13px;
   opacity: 0.7;
   margin: 0;
-  color: black;
+  color: #9d3f3f;
 }
 
-.card-power .card-power-infos {
+.card .card-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-}
-
-.card-power-infos .card-power-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+  border-radius: 4px;
 }
 
 .card-dashboard {
@@ -56,4 +42,20 @@
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin: 10px 0px;
+  border-radius: 4px;
+}
+
+.card-dashboard .card-infos {
+  margin: 10px 20px;
+}
+
+.chat-card {
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 4px;
 }
